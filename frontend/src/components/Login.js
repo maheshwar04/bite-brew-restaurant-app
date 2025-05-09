@@ -24,6 +24,9 @@ function Login() {
       } else {
         console.error("Login failed:", response.data.message);
       }
+      console.log("User logged in:", response);
+      // Redirect to products page on successful login
+      navigate('/products');
     } catch (error) {
       console.error("Error logging in user:", error);
     }
