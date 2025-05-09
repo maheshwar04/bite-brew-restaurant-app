@@ -34,28 +34,28 @@ const products = [
       name: "Sandwiches",
       description: "Freshly made sandwiches with a variety of fillings.",
       price: 5.0,
-      imageUrl: "/images/sandwiches.jpg",
+      imageUrl: "/images/sandwich.jpg",
     },
     {
       id: 6,
       name: "Pastas",
       description: "Delicious pasta dishes with rich and creamy sauces.",
       price: 7.0,
-      imageUrl: "/images/pastas.jpg",
+      imageUrl: "/images/pasta.jpg",
     },
     {
       id: 7,
       name: "Iced Tea",
       description: "Refreshing iced tea, perfect for cooling down.",
       price: 2.5,
-      imageUrl: "/images/iced_tea.jpg",
+      imageUrl: "/images/iced-tea.jpg",
     },
     {
       id: 8,
       name: "Fried Chicken",
       description: "Crispy, golden fried chicken full of flavor.",
       price: 6.5,
-      imageUrl: "/images/fried_chicken.jpg",
+      imageUrl: "/images/fried-chicken.jpg",
     },
   ];
   

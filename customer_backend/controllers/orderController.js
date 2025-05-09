@@ -5,7 +5,7 @@ const User = require('../models/userModel');
 exports.createOrder = async (req, res) => {
   try {
     // Step 1: Communicate with Spring Boot product service
-    const productServiceUrl = 'http://springboot-server-url/api/products';
+    const productServiceUrl = 'http://localhost:8081/swagger-ui/index.html';
     const productResponse = await axios.get(productServiceUrl);
     
     // Assuming productResponse.data contains the product details

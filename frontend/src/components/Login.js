@@ -15,6 +15,15 @@ function Login() {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:5000/api/users/login", formData);
+      
+      // Check if the login was successful, typically by checking response status or data
+      if (response.status === 200 && response.data.success) {
+        console.log("User logged in:", response);
+        // Redirect to products page on successful login
+        navigate('/products');
+      } else {
+        console.error("Login failed:", response.data.message);
+      }
       console.log("User logged in:", response);
       // Redirect to products page on successful login
       navigate('/products');
