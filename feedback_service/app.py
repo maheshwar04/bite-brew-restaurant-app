@@ -109,5 +109,5 @@ def get_feedback():
  
 if __name__ == "__main__":
     ip=socket.gethostbyname(socket.gethostname())
-    eureka_client.init(eureka_server="http://localhost:8761/eureka",app_name="feedback-service",instance_ip="10.170.217.94",instance_port=7004)
+    eureka_client.init(eureka_server="http://localhost:8761/eureka",app_name="feedback-service",instance_ip=ip,instance_port=7004)
     app.run(host="0.0.0.0",port=7004)
