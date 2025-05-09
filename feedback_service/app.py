@@ -1,5 +1,9 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+import os
+
+app = Flask(__name__)
+
 from flasgger import Swagger
 import socket
 import py_eureka_client.eureka_client as eureka_client
@@ -26,6 +30,9 @@ class Feedback(db.Model):
 with app.app_context():
     db.create_all()
 
+@app.route('/feedback', methods=['POST'])
+def submit_feedback():
+    data = request.json
 @app.route('/info', methods=['GET'])
 def info():
     return jsonify({
@@ -65,6 +72,7 @@ def submit_feedback():
         customer_id=data.get('customer_id'),
         product_id=data.get('product_id'),
         rating=data.get('rating'),
+        comments=data.get('comments')
         comments=data.get('comments', '')
     )
     db.session.add(feedback)
@@ -73,6 +81,8 @@ def submit_feedback():
 
 @app.route('/feedback', methods=['GET'])
 def get_feedback():
+    product_id = request.args.get('product_id')
+    feedbacks = Feedback.query.filter_by(product_id=product_id).all()
     """
     Get feedback for a specific product
     ---
@@ -103,6 +113,11 @@ def get_feedback():
         'product_id': f.product_id,
         'rating': f"{f.rating}/5",
         'comments': f.comments,
+        'created_at': f.created_at
+    } for f in feedbacks]), 200
+
+if __name__ == "__main__":
+    app.run(port=7004)
         'created_at': f.created_at.isoformat()
     } for f in feedbacks]), 200
 
