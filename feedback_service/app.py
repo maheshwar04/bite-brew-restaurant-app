@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flasgger import Swagger
+import socket
 import py_eureka_client.eureka_client as eureka_client
 import os
 
@@ -24,6 +25,20 @@ class Feedback(db.Model):
 # Create the database tables
 with app.app_context():
     db.create_all()
+
+@app.route('/info', methods=['GET'])
+def info():
+    return jsonify({
+        "Name":"feedback-service",
+        "Version":"0.0.0.1",
+        "Description":"Feedback for the ordered items"
+    })
+
+@app.route('/health', methods=['GET'])
+def health():
+    return jsonify({
+        "Status":"UP"
+    })
 
 @app.route('/feedback', methods=['POST'])
 def submit_feedback():
@@ -93,5 +108,6 @@ def get_feedback():
 
 
 if __name__ == "__main__":
-    eureka_client.init(eureka_server="http://localhost:8761/eureka",app_name="feedback-service",instance_ip="10.170.217.94",instance_port=7004)
+    ip=socket.gethostbyname(socket.gethostname())
+    eureka_client.init(eureka_server="http://localhost:8761/eureka",app_name="feedback-service",instance_ip=ip,instance_port=7004)
     app.run(host="0.0.0.0",port=7004)
