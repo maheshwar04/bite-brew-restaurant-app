@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from flasgger import Swagger
 import socket
 import py_eureka_client.eureka_client as eureka_client
 import os
  
 app = Flask(__name__)
+CORS(app, origins=["http://localhost:3000"], supports_credentials=True)
 Swagger(app)
 # Configure SQLite database
 basedir = os.path.abspath(os.path.dirname(__file__))

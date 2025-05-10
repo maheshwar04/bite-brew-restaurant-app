@@ -19,7 +19,7 @@ function ShowAllUsers() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="box-container">
       <h2>All Users</h2>
       <ul>
         {users.map((user) => (
