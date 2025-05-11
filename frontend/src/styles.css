@@ -557,3 +557,20 @@ body {
     height: auto;
   }
 }
+.address-section {
+  margin: 20px 0;
+}
+
+.address-section h4 {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.address-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 1rem;
+}

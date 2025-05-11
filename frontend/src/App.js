@@ -15,6 +15,7 @@ import "./styles.css";
 import CartPage from "./components/CartPage";
 import Orders from "./components/Orders";
 import ProductDetailsPage from "./components/ProductDetailsPage";
+import AdminPanel from "./Dashboard/AdminPanel";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -102,7 +103,18 @@ function App() {
                 <Orders />
               </>
             ) : (
-              <Navigate to="/login" />
+              <Navigate to="/" />
+            )
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            isAuthenticated() &&
+            localStorage.getItem("name") === "Maheshwar Nag" ? (
+              <AdminPanel />
+            ) : (
+              <Navigate to="/" replace />
             )
           }
         />
