@@ -16,6 +16,9 @@ import CartPage from "./components/CartPage";
 import Orders from "./components/Orders";
 import ProductDetailsPage from "./components/ProductDetailsPage";
 import AdminPanel from "./Dashboard/AdminPanel";
+import AdminNavBar from "./Dashboard/AdminNavBar";
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -36,8 +39,6 @@ function App() {
         return <Login />;
       case "register":
         return <Register />;
-      case "users":
-        return <ShowAllUsers />;
       default:
         return null;
     }
@@ -55,6 +56,8 @@ function App() {
             </div>
           }
         />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route
           path="/products"
           element={
@@ -112,7 +115,25 @@ function App() {
           element={
             isAuthenticated() &&
             localStorage.getItem("name") === "Maheshwar Nag" ? (
-              <AdminPanel />
+              <>
+                <AdminNavBar />
+                <AdminPanel />
+              </>
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        />
+
+        <Route
+          path="/admin/users"
+          element={
+            isAuthenticated() &&
+            localStorage.getItem("name") === "Maheshwar Nag" ? (
+              <>
+                <AdminNavBar />
+                <ShowAllUsers />
+              </>
             ) : (
               <Navigate to="/" replace />
             )

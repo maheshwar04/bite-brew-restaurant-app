@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const AdminPanel = () => {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [form, setForm] = useState({
     name: "",
     description: "",
@@ -20,13 +20,22 @@ const AdminPanel = () => {
   const [errors, setErrors] = useState({});
 
   const fetchProducts = async () => {
-    const res = await axios.get("http://localhost:8081/api/products");
-    setProducts(res.data);
+    try {
+      const response = await axios.get("http://localhost:8081/api/products");
+      setProducts(response.data);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchProducts();
   }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   const validateForm = () => {
     const errs = {};
@@ -81,13 +90,6 @@ const AdminPanel = () => {
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem("name");
-    localStorage.removeItem("userId");
-    localStorage.removeItem("token");
-    navigate("/");
-  };
-
   const handleEdit = (product) => {
     setForm({ ...product });
     setproductId(product.productId);
@@ -103,21 +105,6 @@ const AdminPanel = () => {
 
   return (
     <div>
-      {/* 🌐 Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-2 d-flex justify-content-between align-items-center">
-        <a className="navbar-brand fw-bold fs-4" href="#">
-          🍴 Bite & Brew Admin
-        </a>
-        <div className="d-flex gap-3">
-          <Link to="/products" className="btn btn-outline-light">
-            Products
-          </Link>
-          <button className="btn btn-outline-danger" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
-      </nav>
-
       <div className="container mt-4">
         <div
           className="card p-4 shadow-lg rounded"

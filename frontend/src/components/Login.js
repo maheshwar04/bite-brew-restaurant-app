@@ -30,6 +30,7 @@ function Login() {
       console.log("User logged in:", response);
       localStorage.setItem("userId", response.data.userId);
       localStorage.setItem("name", response.data.name);
+      localStorage.setItem("email", response.data.email);
       localStorage.setItem("token", response.data.token);
       navigate("/products");
     } catch (error) {

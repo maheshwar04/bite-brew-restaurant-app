@@ -574,3 +574,37 @@ body {
   resize: none;
   font-size: 1rem;
 }
+
+.profile-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.profile-popup {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  width: 250px;
+  color: #000;
+}
+
+.profile-popup p {
+  margin: 8px 0;
+}
+
+.profile-popup a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-popup a:hover {
+  text-decoration: underline;
+}
