@@ -8,6 +8,7 @@ const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("name");
+    localStorage.removeItem("userId");
     localStorage.removeItem("token");
     navigate("/");
   };

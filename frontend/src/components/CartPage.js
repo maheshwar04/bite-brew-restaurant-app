@@ -4,7 +4,8 @@ import axios from "axios";
 import "../styles.css";
 
 function CartPage({ cart, setCart }) {
-  const [isCODChecked, setIsCODChecked] = useState(true); // COD default selected
+  const [isCODChecked, setIsCODChecked] = useState(true);
+  const [address, setAddress] = useState("");
   const navigate = useNavigate();
   console.log(cart);
   const handleQuantityChange = (index, delta) => {
@@ -32,6 +33,11 @@ function CartPage({ cart, setCart }) {
   };
 
   const handleCheckout = async () => {
+    if (!address.trim()) {
+      alert("Please enter a delivery address.");
+      return;
+    }
+
     if (!isCODChecked) {
       alert("You must select Cash on Delivery to proceed.");
       return;
@@ -50,9 +56,6 @@ function CartPage({ cart, setCart }) {
         productId: item.productId,
         quantity: item.quantity || 1,
       }));
-      console.log("-------------------------");
-      console.log(orderProducts);
-      console.log("-------------------------");
       const response = await axios.post(
         "http://localhost:5000/api/orders/create",
         {
@@ -66,7 +69,9 @@ function CartPage({ cart, setCart }) {
         }
       );
 
-      alert("✅ Order placed successfully!");
+      alert(
+        "✅ Order placed successfully! 🚚 Your delicious food will arrive in 25 minutes. Get ready to indulge! 🍽️"
+      );
       setCart([]); // Clear the cart
       navigate("/products"); // Redirect to products page after successful order
     } catch (error) {
@@ -74,7 +79,6 @@ function CartPage({ cart, setCart }) {
       alert("❌ Failed to place order.");
     }
   };
-
   return (
     <div className="cart-page">
       <h2>Your Cart</h2>
@@ -110,6 +114,17 @@ function CartPage({ cart, setCart }) {
               </div>
             </div>
           ))}
+
+          <textarea
+            rows="4"
+            placeholder="Enter your full address here"
+            className="address-input"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+
+          {/* 💰 Checkout Section */}
           <div className="cart-total">
             <h3>Total: ₹{getTotal()}</h3>
             <label style={{ marginTop: "10px", display: "block" }}>
