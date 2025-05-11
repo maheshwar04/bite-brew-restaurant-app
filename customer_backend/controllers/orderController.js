@@ -29,6 +29,7 @@ exports.createOrder = async (req, res) => {
         throw new Error(`Product with ID ${item.productId} not found`);
 
       return {
+        productId: matchedProduct.productId,
         name: matchedProduct.name,
         price: matchedProduct.price,
         imageUrl: matchedProduct.imageUrl || "",

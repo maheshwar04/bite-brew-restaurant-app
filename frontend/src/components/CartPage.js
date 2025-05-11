@@ -6,7 +6,7 @@ import "../styles.css";
 function CartPage({ cart, setCart }) {
   const [isCODChecked, setIsCODChecked] = useState(true); // COD default selected
   const navigate = useNavigate();
-
+  console.log(cart);
   const handleQuantityChange = (index, delta) => {
     const updatedCart = [...cart];
     updatedCart[index].quantity = Math.max(
@@ -50,7 +50,9 @@ function CartPage({ cart, setCart }) {
         productId: item.productId,
         quantity: item.quantity || 1,
       }));
+      console.log("-------------------------");
       console.log(orderProducts);
+      console.log("-------------------------");
       const response = await axios.post(
         "http://localhost:5000/api/orders/create",
         {

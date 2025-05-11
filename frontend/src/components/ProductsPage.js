@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function ProductsPage({ handleAddToCart }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -36,8 +38,16 @@ function ProductsPage({ handleAddToCart }) {
               className="product-image"
             />
             <h3>{product.name}</h3>
-            <p>{product.description}</p>
             <p>₹{product.price.toFixed(2)}</p>
+            <div>
+              {" "}
+              <button
+                className="info-btn"
+                onClick={() => navigate(`/products/${product.productId}`)}
+              >
+                More Info
+              </button>
+            </div>
             <button
               className="add-to-cart-btn"
               onClick={() => {

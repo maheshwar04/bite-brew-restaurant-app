@@ -14,6 +14,7 @@ import ProductsNavbar from "./components/ProductsNavbar";
 import "./styles.css";
 import CartPage from "./components/CartPage";
 import Orders from "./components/Orders";
+import ProductDetailsPage from "./components/ProductDetailsPage";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null);
@@ -103,6 +104,18 @@ function App() {
             ) : (
               <Navigate to="/login" />
             )
+          }
+        />
+        <Route
+          path="/products/:productId"
+          element={
+            <>
+              <ProductsNavbar
+                isAuthenticated={isAuthenticated}
+                cartItemCount={cart.length}
+              />
+              <ProductDetailsPage />
+            </>
           }
         />
       </Routes>

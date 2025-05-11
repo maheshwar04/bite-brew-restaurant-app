@@ -6,8 +6,9 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState("");
   const [feedback, setFeedback] = useState({});
-
+  console.log(feedback);
   const userId = localStorage.getItem("userId"); // assuming it's stored on login
+  const name = localStorage.getItem("name"); // assuming it's stored on login
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -34,15 +35,16 @@ const Orders = () => {
     }));
   };
 
-  const submitFeedback = async (productId) => {
-    const ratingRaw = feedback[productId]?.rating;
-    const rating = ratingRaw ? parseInt(ratingRaw) : 0; // Convert rating to integer
+  const submitFeedback = async (productId, _id) => {
+    const ratingRaw = feedback[_id]?.rating;
+    const rating = ratingRaw ? parseInt(ratingRaw) : 0;
 
     const payload = {
+      customer_name: name,
       customer_id: userId,
       product_id: productId,
       rating,
-      comments: feedback[productId]?.comments || "",
+      comments: feedback[_id]?.comments || "",
     };
 
     console.log("Submitting Feedback Payload:", payload);
@@ -127,7 +129,9 @@ const Orders = () => {
                           ></textarea>
                           <button
                             className="btn btn-primary"
-                            onClick={() => submitFeedback(product._id)}
+                            onClick={() =>
+                              submitFeedback(product.productId, product._id)
+                            }
                           >
                             Submit Feedback
                           </button>

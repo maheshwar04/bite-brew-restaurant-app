@@ -18,6 +18,7 @@ db = SQLAlchemy(app)
  
 class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    customer_name = db.Column(db.String(50), nullable=False) 
     customer_id = db.Column(db.Integer, nullable=False)
     product_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
@@ -64,6 +65,7 @@ def submit_feedback():
         return jsonify({"error": "Invalid input"}), 400
    
     feedback = Feedback(
+        customer_name=data.get('customer_name'),
         customer_id=data.get('customer_id'),
         product_id=data.get('product_id'),
         rating=data.get('rating'),
@@ -101,6 +103,7 @@ def get_feedback():
    
     return jsonify([{
         'id': f.id,
+        'customer_name':f.customer_name,
         'customer_id': f.customer_id,
         'product_id': f.product_id,
         'rating': f"{f.rating}/5",
