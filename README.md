@@ -217,6 +217,7 @@ Bites & Brew Frontend is the React-based user interface for the full-stack café
 
 * React
 * React Router DOM
+* Bootstrap 
 * Axios
 * CSS for styling
 
