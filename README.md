@@ -329,7 +329,7 @@ Bites & Brew Frontend is the React-based user interface for the full-stack café
 ### ✅ Admin/Viewer Features
 
 * View list of all registered users
-
+*Add and delete the products
 ---
 
 ## 🔗 Routes Overview
