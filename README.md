@@ -18,8 +18,8 @@
 | Service Name           | Tech Stack                        | Database   | Port  |
 |------------------------|------------------------------------|------------|-------|
 | Product Service        | Spring Boot (Java 21)              | H2         | 8081  |
-| Feedback Service       | Python Flask                       | SQLite     | 8083  |
-| Customer+ order Service| Node.js + Express.js + JWT Auth    | MongoDB    | 8084  |
+| Feedback Service       | Python Flask                       | SQLite     | 1704  |
+| Customer+ order Service| Node.js + Express.js + JWT Auth    | MongoDB    | 5000  |
 | Eureka Server          | Spring Boot                        | -          | 8761  |
 | Frontend               | React + Bootstrap + CSS Animations | -          | 3000  |
 
