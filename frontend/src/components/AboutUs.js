@@ -14,7 +14,7 @@ const AboutUs = () => {
       <div className="row align-items-center">
         <div className="col-md-6 mb-4">
           <img
-            src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092"
+            src="https://assets.architecturaldigest.in/photos/64f85037ec0bc118bdd98aba/master/pass/Untitled%20design%20(14).png"
             alt="Restaurant"
             className="img-fluid rounded shadow"
           />

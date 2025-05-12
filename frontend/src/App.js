@@ -40,7 +40,7 @@ function App() {
       case "register":
         return <Register />;
       default:
-        return null;
+        return <Login />;
     }
   };
 
