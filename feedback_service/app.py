@@ -74,7 +74,27 @@ def submit_feedback():
     db.session.add(feedback)
     db.session.commit()
     return jsonify({"message": "Feedback submitted successfully"}), 201
- 
+
+@app.route('/feedback/all', methods=['GET'])
+def get_all_feedback():
+    """
+    Get all feedbacks
+    ---
+    responses:
+        200:
+            description: List of all feedbacks
+    """
+    feedbacks = Feedback.query.all()
+    return jsonify([{
+        'id': f.id,
+        'customer_name': f.customer_name,
+        'customer_id': f.customer_id,
+        'product_id': f.product_id,
+        'rating': f"{f.rating}/5",
+        'comments': f.comments,
+        'created_at': f.created_at.isoformat()
+    } for f in feedbacks]), 200
+
 @app.route('/feedback', methods=['GET'])
 def get_feedback():
     """

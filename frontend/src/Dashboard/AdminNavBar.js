@@ -21,10 +21,13 @@ const AdminNavBar = () => {
             Home
           </Link>
           <Link to="/products" className="btn btn-outline-light">
-            Products
+            Menu
           </Link>
-          <Link to="/allorders" className="btn btn-outline-light">
+          <Link to="/admin/orders" className="btn btn-outline-light">
             Orders
+          </Link>
+          <Link to="/admin/feedbacks" className="btn btn-outline-light">
+            feedbacks
           </Link>
           <Link to="/admin/users" className="btn btn-outline-light">
             Users

@@ -88,12 +88,14 @@ exports.getOrdersByDate = async (req, res) => {
     const { date } = req.query;
 
     if (!date) {
-      return res.status(400).json({ success: false, message: "Date is required." });
+      return res
+        .status(400)
+        .json({ success: false, message: "Date is required." });
     }
 
     const start = new Date(date);
     const end = new Date(date);
-    end.setDate(end.getDate() + 1); // Next day for range
+    end.setDate(end.getDate() + 1);
 
     const orders = await Order.find({
       createdAt: {

@@ -19,15 +19,23 @@ import AdminPanel from "./Dashboard/AdminPanel";
 import AdminNavBar from "./Dashboard/AdminNavBar";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
+import FeedbackDashboard from "./components/FeedbackDashboard";
+import OrdersByDate from "./components/OrdersByDate";
 
 function App() {
   const [activeComponent, setActiveComponent] = useState(null);
+  const [cart, setCart] = useState([]);
+
   const isAuthenticated = () => {
     const authToken = localStorage.getItem("token");
     return authToken !== null && authToken !== "";
   };
 
-  const [cart, setCart] = useState([]);
+  const isAdmin = () => {
+    const adminEmails = ["maheshwarnag860@gmail.com", "andrea.jyrwa@gmail.com"];
+    const userEmail = localStorage.getItem("email");
+    return isAuthenticated() && adminEmails.includes(userEmail);
+  };
 
   const handleAddToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
@@ -56,44 +64,61 @@ function App() {
             </div>
           }
         />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactUs />} />
+        <Route
+          path="/about"
+          element={
+            <>
+              <ProductsNavbar
+                isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
+                cartItemCount={cart.length}
+              />
+              <AboutUs />
+            </>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <>
+              <ProductsNavbar
+                isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
+                cartItemCount={cart.length}
+              />
+              <ContactUs />
+            </>
+          }
+        />
+
         <Route
           path="/products"
           element={
             <>
               <ProductsNavbar
                 isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
                 cartItemCount={cart.length}
               />
               <ProductsPage handleAddToCart={handleAddToCart} />
             </>
           }
         />
+
         <Route
           path="/cart"
           element={
             <>
               <ProductsNavbar
                 isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
                 cartItemCount={cart.length}
               />
-              <CartPage cart={cart} setCart={setCart} />{" "}
+              <CartPage cart={cart} setCart={setCart} />
             </>
           }
         />
-        <Route
-          path="/cart"
-          element={
-            <>
-              <ProductsNavbar
-                isAuthenticated={isAuthenticated}
-                cartItemCount={cart.length}
-              />
-              <CartPage cart={cart} setCart={setCart} />{" "}
-            </>
-          }
-        />
+
         <Route
           path="/orders"
           element={
@@ -101,6 +126,7 @@ function App() {
               <>
                 <ProductsNavbar
                   isAuthenticated={isAuthenticated}
+                  isAdmin={isAdmin}
                   cartItemCount={cart.length}
                 />
                 <Orders />
@@ -113,8 +139,7 @@ function App() {
         <Route
           path="/admin"
           element={
-            isAuthenticated() &&
-            localStorage.getItem("name") === "Maheshwar Nag" ? (
+            isAdmin() ? (
               <>
                 <AdminNavBar />
                 <AdminPanel />
@@ -128,8 +153,7 @@ function App() {
         <Route
           path="/admin/users"
           element={
-            isAuthenticated() &&
-            localStorage.getItem("name") === "Maheshwar Nag" ? (
+            isAdmin() ? (
               <>
                 <AdminNavBar />
                 <ShowAllUsers />
@@ -139,26 +163,14 @@ function App() {
             )
           }
         />
+
         <Route
-          path="/products/:productId"
+          path="/admin/feedbacks"
           element={
-            <>
-              <ProductsNavbar
-                isAuthenticated={isAuthenticated}
-                cartItemCount={cart.length}
-              />
-              <ProductDetailsPage />
-            </>
-          }
-        />
-         <Route
-          path="/admin"
-          element={
-            isAuthenticated() &&
-            localStorage.getItem("name") === "Andrea Jyrwa" ? (
+            isAdmin() ? (
               <>
                 <AdminNavBar />
-                <AdminPanel />
+                <FeedbackDashboard />
               </>
             ) : (
               <Navigate to="/" replace />
@@ -166,25 +178,26 @@ function App() {
           }
         />
         <Route
-          path="/admin/users"
+          path="/admin/orders"
           element={
-            isAuthenticated() &&
-            localStorage.getItem("name") === "Andrea Jyrwa" ? (
+            isAdmin() ? (
               <>
                 <AdminNavBar />
-                <ShowAllUsers />
+                <OrdersByDate />
               </>
             ) : (
               <Navigate to="/" replace />
             )
           }
         />
+
         <Route
           path="/products/:productId"
           element={
             <>
               <ProductsNavbar
                 isAuthenticated={isAuthenticated}
+                isAdmin={isAdmin}
                 cartItemCount={cart.length}
               />
               <ProductDetailsPage />

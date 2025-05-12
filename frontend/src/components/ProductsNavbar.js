@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import "../styles.css";
 import { IoPersonCircleSharp } from "react-icons/io5";
+import "../styles.css";
 
-const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
+const ProductsNavbar = ({ isAdmin, isAuthenticated, cartItemCount }) => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
 
@@ -13,7 +13,7 @@ const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
     localStorage.removeItem("email");
     localStorage.removeItem("userId");
     localStorage.removeItem("token");
-    navigate("/");
+    navigate("/"); // Redirect to home page
   };
 
   const userName = localStorage.getItem("name");
@@ -29,6 +29,7 @@ const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
       <div className="navbar-links">
         {isAuthenticated() ? (
           <>
+            {isAdmin() && <Link to="/admin">Admin Page</Link>}
             <Link to="/products">Home</Link>
 
             <Link to="/cart" className="cart-icon">
@@ -47,7 +48,7 @@ const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
               Logout
             </button>
 
-            {/* Popup Box */}
+            {/* Profile Popup Box */}
             {showPopup && (
               <div className="profile-popup">
                 <p>
@@ -56,7 +57,7 @@ const ProductsNavbar = ({ isAuthenticated, cartItemCount }) => {
                 <p>
                   <strong>Email:</strong> {userEmail}
                 </p>
-                <Link to="">Settings</Link>
+                <Link to="/settings">Settings</Link>
               </div>
             )}
           </>
