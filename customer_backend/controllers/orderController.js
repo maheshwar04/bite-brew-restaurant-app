@@ -16,7 +16,6 @@ exports.createOrder = async (req, res) => {
     const productServiceUrl = "http://localhost:8081/api/products";
     const response = await axios.get(productServiceUrl);
     const allProducts = response.data;
-    console.log(response.data);
 
     // Match and map product details
     const orderProducts = selectedProducts.map((item) => {

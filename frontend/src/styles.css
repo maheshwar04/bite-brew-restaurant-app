@@ -642,3 +642,15 @@ body {
   padding: 1.5rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
+
+.about-us {
+  background-color: #dfdfdf;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.contact {
+  background-color: #dfdfdf;
+  min-height: 100vh;
+  padding: 20px;
+}

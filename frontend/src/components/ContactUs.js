@@ -32,7 +32,7 @@ const ContactUs = () => {
 
   return (
     <div className="contact">
-      <div className="container py-5">
+      <div className="container py-3">
         <div className="text-center mb-5">
           <h1 className="fw-bold">📞 Contact Us</h1>
           <p className="lead text-muted">
