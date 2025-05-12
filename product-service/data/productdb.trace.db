@@ -1,0 +1,138 @@
+2025-05-12 12:47:07.363534+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:12.266589+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:13.118257+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:13.288617+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:13.448045+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:13.610120+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:20.894679+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:27.371474+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:47:28.528388+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:12.192687+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.020210+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.177810+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.321175+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.462714+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.625537+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.734563+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.856495+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:15.988339+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:16.128824+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:48:16.267591+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:49:17.693739+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:49:24.014856+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:50:56.810557+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:50:59.259378+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:50:59.814789+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:13.458153+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:15.434647+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:15.598370+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:15.760029+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:15.899437+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:16.023643+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:16.280815+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:16.402310+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:53:16.631885+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:55:14.799127+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:56:46.080444+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:56:51.162943+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:56:55.654539+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:57:05.180643+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 12:57:19.196534+05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:01:46.272204+05:30 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:49:12.962661+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTExQWFhUXGBcX... (18131)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:54:01.144132+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTEhMWFRUVGRgX... (12487)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:54:02.573072+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTEhMWFRUVGRgX... (12487)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:54:32.572227+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTEhMVFhUXGBca... (13191)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]
+2025-05-12 13:54:47.247206+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "IMAGE_URL CHARACTER VARYING(255)": "'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUTEhMVFhUXGBca... (13191)"; SQL statement:
+insert into product (brand,category,created_at,description,image_url,is_available,name,price,product_type,stock_quantity,updated_at,product_id) values (?,?,?,?,?,?,?,?,?,?,?,default) [22001-232]

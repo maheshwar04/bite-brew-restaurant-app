@@ -151,6 +151,46 @@ function App() {
             </>
           }
         />
+         <Route
+          path="/admin"
+          element={
+            isAuthenticated() &&
+            localStorage.getItem("name") === "Andrea Jyrwa" ? (
+              <>
+                <AdminNavBar />
+                <AdminPanel />
+              </>
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        />
+        <Route
+          path="/admin/users"
+          element={
+            isAuthenticated() &&
+            localStorage.getItem("name") === "Andrea Jyrwa" ? (
+              <>
+                <AdminNavBar />
+                <ShowAllUsers />
+              </>
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        />
+        <Route
+          path="/products/:productId"
+          element={
+            <>
+              <ProductsNavbar
+                isAuthenticated={isAuthenticated}
+                cartItemCount={cart.length}
+              />
+              <ProductDetailsPage />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );

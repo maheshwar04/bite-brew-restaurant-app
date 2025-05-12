@@ -83,6 +83,32 @@ exports.getOrderHistory = async (req, res) => {
   }
 };
 
+exports.getOrdersByDate = async (req, res) => {
+  try {
+    const { date } = req.query;
+
+    if (!date) {
+      return res.status(400).json({ success: false, message: "Date is required." });
+    }
+
+    const start = new Date(date);
+    const end = new Date(date);
+    end.setDate(end.getDate() + 1); // Next day for range
+
+    const orders = await Order.find({
+      createdAt: {
+        $gte: start,
+        $lt: end,
+      },
+    });
+
+    res.status(200).json({ success: true, data: orders });
+  } catch (error) {
+    console.error("Error fetching orders by date:", error.message);
+    res.status(500).json({ success: false, message: "Internal server error" });
+  }
+};
+
 // Helper to calculate total price
 function calculateTotal(products) {
   return products.reduce(
