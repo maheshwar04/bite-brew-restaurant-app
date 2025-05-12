@@ -615,3 +615,15 @@ body {
   min-height: 100vh;
   padding: 20px;
 }
+
+.about-us {
+  background-color: #fdf6e3;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.contact {
+  background-color: #fdf6e3;
+  min-height: 100vh;
+  padding: 20px;
+}
