@@ -5,12 +5,13 @@ import axios from "axios";
 
 function Login() {
   const [formData, setFormData] = useState({ email: "", password: "" });
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -26,6 +27,9 @@ function Login() {
         navigate("/products");
       } else {
         console.error("Login failed:", response);
+        setMessage("Error logging in user:");
+        await wait(2000);
+        setMessage("");
       }
       console.log("User logged in:", response);
       localStorage.setItem("userId", response.data.userId);
@@ -35,12 +39,16 @@ function Login() {
       navigate("/products");
     } catch (error) {
       console.error("Error logging in user:", error);
+      setMessage("Error logging in user:");
+      await wait(2000);
+      setMessage("");
     }
   };
 
   return (
     <div className="box-container">
       <h2>Login</h2>
+      {message && <div className="alert alert-info mt-3">{message}</div>}
       <form onSubmit={handleSubmit}>
         <input
           className="input-form "

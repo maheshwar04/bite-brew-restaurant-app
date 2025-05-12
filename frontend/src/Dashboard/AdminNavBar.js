@@ -23,6 +23,9 @@ const AdminNavBar = () => {
           <Link to="/products" className="btn btn-outline-light">
             Products
           </Link>
+          <Link to="/allorders" className="btn btn-outline-light">
+            Orders
+          </Link>
           <Link to="/admin/users" className="btn btn-outline-light">
             Users
           </Link>
