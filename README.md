@@ -125,8 +125,11 @@ npm start
 Before login:
 ![Screenshot 2025-05-13 003931](https://github.com/user-attachments/assets/dc738a17-b550-4980-a7b6-3d3bd8a6f252)
 ![Screenshot 2025-05-13 003946](https://github.com/user-attachments/assets/eae6a6c0-c8ad-468f-800e-70ad39b0e207)
+![image](https://github.com/user-attachments/assets/16cd5d8e-8acd-4b5b-9f29-981d21479c2a)
+![image](https://github.com/user-attachments/assets/8ae688db-ed8b-4368-8013-14d656a29ed5)
 ![Screenshot 2025-05-13 004408](https://github.com/user-attachments/assets/96133e99-2926-46de-95e2-46ca39f743b9)
 ![Screenshot 2025-05-13 004421](https://github.com/user-attachments/assets/d4ee01b9-b121-4c2d-b3dc-15e7116efef2)
+
 
 After login:Users can't see Admin Page
 ![Screenshot 2025-05-13 004539](https://github.com/user-attachments/assets/d38ac411-fdb4-4d19-a13f-be1d1bb0461f)
