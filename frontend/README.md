@@ -1,70 +1,196 @@
-# Getting Started with Create React App
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ☕ Bites & Brew - Frontend
 
-## Available Scripts
+Bites & Brew Frontend is the React-based user interface for the full-stack café management application. It allows users to register, log in, view products, and interact with the app's backend via a sleek, user-friendly UI. It communicates with the backend API to handle authentication, registration, product display, and order history.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📸 Preview 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 2025-05-08 114436](https://github.com/user-attachments/assets/7dc66258-d987-4493-bf04-fa8007434850)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot 2025-05-08 114416](https://github.com/user-attachments/assets/64805db3-ee4a-4fde-b988-96a8c61b9684)
 
-### `npm test`
+![Screenshot 2025-05-08 114406](https://github.com/user-attachments/assets/f392d1e3-26ea-4c36-bdb5-6e9b5a52e719)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Screenshot 2025-05-08 114456](https://github.com/user-attachments/assets/1fecd486-c8aa-4a52-96e9-e8b1a5796f07)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧰 Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
 
-### `npm run eject`
+* React
+* React Router DOM
+* Axios
+* CSS for styling
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* JWT (JSON Web Token)
+* Swagger (API docs)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📂 Project Structure
 
-## Learn More
+```
+/client
+  └── /components
+      ├── Login.js
+      ├── Register.js
+      ├── ProductsPage.js
+      ├── AboutUs.js
+      ├── ProductDetailsPage.js
+      ├── ProductsNavbar.js
+      ├── Orders.js
+      ├── Navigation.js
+      ├── CartPage.js
+      └── ShowAllUsers.js
+  └── /Dashboard
+      ├── AdminNavBar.js
+      ├── AdminPanrl.js
+  └── products.js
+  └── App.js
+  └── styles.css
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+/server
+  ├── controllers/
+  ├── middleware/
+  ├── models/
+  ├── routes/
+  ├── db.js
+  ├── swaggerconfig.js
+  └── server.js
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## ⚙️ Setup Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Backend
 
-### Analyzing the Bundle Size
+1. Clone the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```bash
+   git clone <your-repository-url>
+   cd <repository-folder>
+   ```
 
-### Making a Progressive Web App
+2. Set up the backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   cd server
+   npm install
+   ```
 
-### Advanced Configuration
+3. Create a `.env` file in the `/server` directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```
+   NODE_ENV=development
+   PORT=5000
+   MONGO_URI=<your-mongodb-uri>
+   JWT_SECRET=<your-secret-key>
+   ```
 
-### Deployment
+4. Start the server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm start
+   ```
 
-### `npm run build` fails to minify
+### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Go to the frontend directory:
+
+   ```bash
+   cd client
+   npm install
+   ```
+
+2. Start the React app:
+
+   ```bash
+   npm start
+   ```
+
+---
+
+## 🔐 Authentication Flow
+
+* Users register via `/register`
+* On login via `/login`, they receive a JWT token
+* Protected routes (like `/users`) require the JWT token in the request header:
+
+  ```
+  Authorization: Bearer <token>
+  ```
+
+---
+
+## 🛒 Features
+
+### ✅ User Features
+
+* Register and log in
+* Access products page after logging in
+* View beautiful UI with café background and styled components
+
+### ✅ Admin/Viewer Features
+
+* View list of all registered users
+
+---
+
+## 🔗 Routes Overview
+
+### 🔒 Backend API Endpoints
+
+| Method | Endpoint              | Description               | Auth Required |
+| ------ | --------------------- | ------------------------- | ------------- |
+| POST   | `/api/users/register` | Register a new user       | No            |
+| POST   | `/api/users/login`    | Login user, get JWT token | No            |
+| GET    | `/api/users`          | Get all users             | ✅ Yes         |
+| POST   | `/api/orders/create`  | Create new order          | ✅ Yes         |
+| GET    | `/api/orders/history` | Get user order history    | ✅ Yes         |
+
+---
+
+## 🎨 UI Design
+
+* Background: `background_cafe.png`
+* Font: Algerian-style for title, Open Sans for text
+* Navigation links styled for clarity and interaction
+
+---
+
+## 🧪 API Documentation
+
+Swagger UI is available at:
+
+```
+http://localhost:5000/api-docs
+```
+
+> Make sure to install `swagger-ui-express` and `swagger-jsdoc` for documentation support.
+
+---
+
+## 🙋 Contributing
+
+Contributions, suggestions, and improvements are welcome!
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/feature-name`)
+3. Commit your changes (`git commit -am 'Add feature'`)
+4. Push to the branch (`git push origin feature/feature-name`)
+5. Create a new Pull Request
+
+
+---
