@@ -102,11 +102,6 @@ npm start
 
 ---
 
-## 📦 Docker Support (Coming Soon)
-Docker Compose setup will be added to containerize the entire app.
-
----
-
 
 ## 🧑‍💻 How It Works
 1. Customer signs up and logs in (JWT).
@@ -147,6 +142,471 @@ Admin DashBoard:
 ![Screenshot 2025-05-13 005014](https://github.com/user-attachments/assets/7ea1aee5-1d80-41eb-b8e7-7eeb702f3a7f)
 ![Screenshot 2025-05-13 005033](https://github.com/user-attachments/assets/de735361-b272-4ed5-9f3a-154464be51e9)
 ![Screenshot 2025-05-13 005049](https://github.com/user-attachments/assets/8f2c37b7-82e0-4456-ae2f-20fec58d4741)
+
+---
+
+# Future Scope
+In future we can containerize these microservices using Docker
+
+----
+
+## 📁 Project Folder Structure (`bites&brew`)
+
+```
+bites&brew/
+│
+├── customer_service/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── .env.example
+│   ├── db.js
+│   ├── auth.js
+│   ├── server.js
+│   ├── userController.js
+│   ├── orderController.js
+│   ├── userModel.js
+│   ├── orderModel.js
+│   ├── userRoutes.js
+│   ├── orderRoutes.js
+│   └── package.json
+│
+├── product-services/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── pom.xml
+│   ├── target/your-product-app.jar
+│   └── src/
+│       └── main/java/... (your Java code)
+│
+├── feedback_services/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── requirements.txt
+│   ├── app.py
+│   └── feedback.db (optional placeholder)
+│
+├── frontend/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── package.json
+│   ├── public/
+│   └── src/
+│
+├── eureka-server/
+│   ├── Dockerfile
+│   ├── .dockerignore
+│   ├── pom.xml
+│   ├── target/eureka-server.jar
+│   └── src/
+│
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## 🐳 Step-by-Step: Containerizing Microservices
+
+---
+
+### 1. **customer\_service (Node.js + MongoDB)**
+
+**Dockerfile** – Place inside `customer_service/`
+
+```dockerfile
+# customer_service/Dockerfile
+FROM node:18
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+ENV PORT=5000
+EXPOSE 5000
+
+CMD ["node", "server.js"]
+```
+
+Make sure `server.js` starts the app and uses `process.env` to get DB connection.
+
+---
+
+### 2. **product-services (Spring Boot + H2)**
+
+**Dockerfile** – Place inside `product-services/`
+
+```dockerfile
+# product-services/Dockerfile
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+EXPOSE 8081
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+Before building, make sure to run `mvn clean package` to create the `.jar`.
+
+---
+
+### 3. **feedback\_services (Python + SQLite)**
+
+**Dockerfile** – Place inside `feedback_services/`
+
+```dockerfile
+# feedback_services/Dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 5001
+
+CMD ["python", "app.py"]
+```
+
+Make sure `app.py` starts your Flask/FastAPI app and listens on port `5001`.
+
+---
+
+### 4. **eureka-server (Spring Boot)**
+
+**Dockerfile** – Place inside `eureka-server/`
+
+```dockerfile
+# eureka-server/Dockerfile
+FROM openjdk:17-jdk-slim
+
+WORKDIR /app
+
+COPY target/*.jar app.jar
+
+EXPOSE 8761
+ENTRYPOINT ["java", "-jar", "app.jar"]
+```
+
+Build the `.jar` before Docker builds.
+
+---
+
+### 5. **frontend (React)**
+
+**Dockerfile** – Place inside `frontend/`
+
+```dockerfile
+# frontend/Dockerfile
+FROM node:18 as build
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+---
+
+## 🧱 Docker Compose File
+
+Create this in the root directory (`bites&brew/docker-compose.yml`):
+
+```yaml
+version: '3.9'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+
+  customer_service:
+    build: ./customer_service
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/bnb
+    depends_on:
+      - mongo
+    networks:
+      - bnb-network
+
+  product_services:
+    build: ./product-services
+    ports:
+      - "8081:8081"
+    depends_on:
+      - eureka-server
+    networks:
+      - bnb-network
+
+  feedback_services:
+    build: ./feedback_services
+    ports:
+      - "5001:5001"
+    networks:
+      - bnb-network
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - bnb-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - customer_service
+      - product_services
+      - feedback_services
+    networks:
+      - bnb-network
+
+networks:
+  bnb-network:
+    driver: bridge
+```
+
+---
+
+## ⚙️ Implementation Steps
+
+1. **Build & Run**
+
+```bash
+cd bites&brew
+docker-compose build
+docker-compose up
+```
+
+2. **Ensure Mongo URI** is `mongodb://mongo:27017/bnb` in `.env` for `customer_service`.
+
+3. **Spring Boot Eureka Clients**
+
+In each Spring Boot app (`product-services`, `eureka-server`), ensure application properties are properly set to discover via Eureka:
+
+```properties
+eureka.client.serviceUrl.defaultZone=http://eureka-server:8761/eureka/
+```
+
+---
+
+## ✅ Final Notes
+
+| Component        | URL                                            |
+| ---------------- | ---------------------------------------------- |
+| Frontend (React) | [http://localhost:3000](http://localhost:3000) |
+| Customer API     | [http://localhost:5000](http://localhost:5000) |
+| Product API      | [http://localhost:8081](http://localhost:8081) |
+| Feedback API     | [http://localhost:5001](http://localhost:5001) |
+| Eureka Dashboard | [http://localhost:8761](http://localhost:8761) |
+
+---
+
+# Orchestrating using Kubernetes and uploading to AWS S3
+We can use kubernetes to orchestrate the docker containers and we can upload the images to AWS S3
+
+---
+
+
+## 🧱 Kubernetes Orchestration for Microservices
+
+---
+
+### 📁 Project Directory Setup for Kubernetes YAMLs
+
+Inside your `bites&brew/` directory, create a folder:
+
+```bash
+mkdir k8s
+```
+
+### 🗂️ Directory Structure (after K8s)
+
+```
+bites&brew/
+│
+├── k8s/
+│   ├── customer-service.yaml
+│   ├── product-service.yaml
+│   ├── feedback-service.yaml
+│   ├── eureka-server.yaml
+│   ├── frontend.yaml
+│   └── mongo.yaml
+```
+
+---
+
+### ✅ Common Kubernetes Configuration Steps
+
+Each service will have a:
+
+* **Deployment**
+* **Service**
+* **(Optional) ConfigMap or Secret**
+
+---
+
+### 🧩 Example: `mongo.yaml`
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo
+spec:
+  ports:
+    - port: 27017
+  selector:
+    app: mongo
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo
+spec:
+  selector:
+    matchLabels:
+      app: mongo
+  template:
+    metadata:
+      labels:
+        app: mongo
+    spec:
+      containers:
+        - name: mongo
+          image: mongo
+          ports:
+            - containerPort: 27017
+```
+
+---
+
+### 🧩 Example: `customer-service.yaml`
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: customer-service
+spec:
+  selector:
+    app: customer-service
+  ports:
+    - port: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-service
+  template:
+    metadata:
+      labels:
+        app: customer-service
+    spec:
+      containers:
+        - name: customer-service
+          image: your-dockerhub-username/customer_service:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGO_URI
+              value: mongodb://mongo:27017/bnb
+```
+
+> 🔁 Repeat similar format for `product-service.yaml`, `feedback-service.yaml`, `eureka-server.yaml`, and `frontend.yaml`
+
+---
+
+### 🏗 Deploy to Kubernetes
+
+If you're using `minikube`, `kind`, or AWS EKS:
+
+```bash
+kubectl apply -f k8s/
+```
+
+---
+
+## 🚀 Upload Docker Images to S3 (as tarballs)
+
+---
+
+### 🧱 Step 1: Save Docker Images
+
+```bash
+docker save -o customer_service.tar your-dockerhub-username/customer_service:latest
+docker save -o product_service.tar your-dockerhub-username/product_service:latest
+docker save -o feedback_service.tar your-dockerhub-username/feedback_service:latest
+docker save -o frontend.tar your-dockerhub-username/frontend:latest
+docker save -o eureka_server.tar your-dockerhub-username/eureka_server:latest
+```
+
+---
+
+### ☁️ Step 2: Upload to AWS S3
+
+Make sure your AWS CLI is configured with:
+
+```bash
+aws configure
+```
+
+Then:
+
+```bash
+aws s3 cp customer_service.tar s3://your-bucket-name/docker-images/
+aws s3 cp product_service.tar s3://your-bucket-name/docker-images/
+aws s3 cp feedback_service.tar s3://your-bucket-name/docker-images/
+aws s3 cp frontend.tar s3://your-bucket-name/docker-images/
+aws s3 cp eureka_server.tar s3://your-bucket-name/docker-images/
+```
+
+---
+
+### 🧪 (Optional) Load Docker image from tar
+
+On another machine or server:
+
+```bash
+docker load -i customer_service.tar
+```
+
+---
+
+## 📝 Summary
+
+| Task                          | Status                            |
+| ----------------------------- | --------------------------------- |
+| Dockerfiles in place          | ✅                                 |
+| Docker Compose defined        | ✅                                 |
+| Kubernetes YAMLs              | ✅ (in `k8s/`)                     |
+| Upload Docker images to S3    | ✅ via `docker save` + `aws s3 cp` |
+| Load image from S3 (optional) | ✅ via `docker load -i`            |
 
 ---
 
