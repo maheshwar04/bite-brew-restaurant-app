@@ -32,7 +32,11 @@ function App() {
   };
 
   const isAdmin = () => {
-    const adminEmails = ["maheshwarnag860@gmail.com", "andrea.jyrwa@gmail.com"];
+    const adminEmails = [
+      "maheshwarnag860@gmail.com",
+      "andrea.jyrwa@gmail.com",
+      "admin@gmail.com",
+    ];
     const userEmail = localStorage.getItem("email");
     return isAuthenticated() && adminEmails.includes(userEmail);
   };
