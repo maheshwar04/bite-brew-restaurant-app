@@ -22,8 +22,8 @@
 | Customer+ order Service| Node.js + Express.js + JWT Auth    | MongoDB    | 5000  |
 | Eureka Server          | Spring Boot                        | -          | 8761  |
 | Frontend               | React + Bootstrap + CSS Animations | -          | 3000  |
-
 ---
+![May 23, 2025, 02_29_28 PM](https://github.com/user-attachments/assets/6bd4bfef-4885-464b-ab8f-0cbddadf5948)
 ---
 
 ## 📂 Repository Structure
